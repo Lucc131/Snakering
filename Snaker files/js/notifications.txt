@@ -1,0 +1,16 @@
+# Uma notificacao por linha.
+# Linhas com # no inicio sao comentarios.
+# Com nome no topo (roxo): Nome: mensagem
+# Sem nome no topo: apenas a mensagem
+
+Voce coletou uma nota e acordou tres suspeitas.
+Amor: Atende o celular, eu quero falar com voce!
+Mensagem perdida: alguem esta torcendo por voce em segredo.
+Hoje a sorte sorriu, mas parecia ironia.
+Alerta burocratico: mais um valor entrou no sistema.
+Piada curta: o boleto correu, mas voce correu mais.
+Voce venceu uma batalha que ninguem viu.
+Atualizacao estranha: as paredes estao observando.
+Nota recebida. Dignidade em manutencao.
+Aviso filosofico: todo atalho custa alguma coisa.
+Boletim do caos: nivel moderado e elegante.

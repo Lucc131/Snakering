@@ -4,6 +4,7 @@ const scoreEl = document.getElementById('score');
 const bestEl = document.getElementById('best');
 const overlay = document.getElementById('overlay');
 const overlayText = document.getElementById('overlay-text');
+const notificationsListEl = document.getElementById('notifications-list');
 
 const fxCanvas = document.getElementById('fx-canvas');
 const fxCtx = fxCanvas.getContext('2d');
@@ -13,6 +14,16 @@ const TILES = canvas.width / GRID_SIZE;
 const START_SPEED = 130;
 const MIN_SPEED = 72;
 const MONEY_VALUE = 100;
+const DEFAULT_NOTIFICATIONS = [
+  'Voce cobrou uma divida. O universo cobrou outra.',
+  'Mensagem anonima: continue, falta pouco.',
+  'Hoje o caos veio de gravata.',
+  'Uma boa noticia: nada explodiu ainda.',
+  'Lembrete: cafe nao e estrategia, mas ajuda.',
+  'Alerta poetico: o silencio tambem faz barulho.',
+  'Update aleatorio: um pato venceu uma discussao.',
+  'Aviso: toda vitoria pequena tem juros compostos.'
+];
 
 let snake = [];
 let direction = { x: 1, y: 0 };
@@ -28,10 +39,13 @@ const fxMouse = { x: 0, y: 0, active: false };
 const fxParticles = [];
 let fxAnimationFrame;
 let fxDpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+let notificationPool = [...DEFAULT_NOTIFICATIONS];
 
 bestEl.textContent = `Recorde R$ ${bestScore}`;
 
 function resetGame() {
+  clearNotifications();
+
   snake = [
     { x: 12, y: 10 },
     { x: 11, y: 10 },
@@ -74,6 +88,7 @@ function tick() {
   if (head.x === target.x && head.y === target.y) {
     score += MONEY_VALUE;
     updateHud();
+    addNotification(pickNotification());
     placeTarget();
 
     if (speed > MIN_SPEED) {
@@ -202,6 +217,7 @@ function updateHud() {
 function finishGame() {
   running = false;
   clearInterval(loop);
+  setNotificationsReviewMode(true);
 
   if (score > bestScore) {
     bestScore = score;
@@ -229,6 +245,106 @@ function hideOverlay() {
   overlay.classList.add('hidden');
 }
 
+function pickNotification() {
+  if (!notificationPool.length) {
+    notificationPool = [...DEFAULT_NOTIFICATIONS];
+  }
+
+  const index = Math.floor(Math.random() * notificationPool.length);
+  const selected = notificationPool.splice(index, 1)[0];
+  return selected || 'Voce coletou mais uma nota.';
+}
+
+function parseNotificationEntry(entry) {
+  const raw = String(entry || '').trim();
+  const matched = raw.match(/^([^:]{1,28}):\s+(.+)$/);
+
+  if (matched) {
+    return {
+      author: matched[1].trim(),
+      message: matched[2].trim()
+    };
+  }
+
+  return {
+    author: '',
+    message: raw || 'Voce coletou mais uma nota.'
+  };
+}
+
+function addNotification(entry) {
+  if (!notificationsListEl) return;
+  const parsed = parseNotificationEntry(entry);
+
+  const item = document.createElement('li');
+  item.className = 'notification-item';
+
+  const head = document.createElement('div');
+  head.className = 'notification-head';
+
+  const app = document.createElement('span');
+  app.className = 'notification-app';
+  app.textContent = parsed.author || 'SNKR ALERTA';
+  if (parsed.author) {
+    app.classList.add('notification-from');
+  }
+
+  const time = document.createElement('span');
+  time.className = 'notification-time';
+  time.textContent = new Date().toLocaleTimeString('pt-BR', {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+
+  head.appendChild(app);
+  head.appendChild(time);
+
+  const message = document.createElement('p');
+  message.className = 'notification-text';
+  message.textContent = parsed.message;
+
+  item.appendChild(head);
+  item.appendChild(message);
+  notificationsListEl.prepend(item);
+
+  gsap.fromTo(
+    item,
+    { y: -12, opacity: 0, scale: 0.98 },
+    { y: 0, opacity: 1, scale: 1, duration: 0.24, ease: 'power2.out' }
+  );
+}
+
+function clearNotifications() {
+  if (!notificationsListEl) return;
+  notificationsListEl.innerHTML = '';
+  notificationsListEl.scrollTop = 0;
+  setNotificationsReviewMode(false);
+}
+
+function setNotificationsReviewMode(enabled) {
+  if (!notificationsListEl) return;
+  notificationsListEl.classList.toggle('is-reviewing', enabled);
+}
+
+async function loadNotificationPool() {
+  try {
+    const response = await fetch('../js/notifications.txt', { cache: 'no-store' });
+    if (!response.ok) return;
+
+    const rawText = await response.text();
+    const lines = rawText
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter((line) => line && !line.startsWith('#'));
+
+    if (lines.length) {
+      notificationPool = [...lines];
+    }
+  } catch (error) {
+    notificationPool = [...DEFAULT_NOTIFICATIONS];
+  }
+}
+
 function setupFxCanvas() {
   fxDpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
   fxCanvas.width = Math.floor(window.innerWidth * fxDpr);
@@ -252,7 +368,7 @@ function createFxParticle() {
     y: Math.random() * window.innerHeight,
     vx: Math.cos(angle) * speed,
     vy: Math.sin(angle) * speed,
-    baseRadius: 1 + Math.random() * 1.8,
+    baseRadius: 1 + Math.random() * 3,
     pulse: Math.random() * Math.PI * 2
   };
 }
@@ -260,7 +376,7 @@ function createFxParticle() {
 function animateFx() {
   fxCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-  const interactionRadius = 130;
+  const interactionRadius = 320;
   const maxLinkDist = 92;
 
   for (let i = 0; i < fxParticles.length; i += 1) {
@@ -282,7 +398,7 @@ function animateFx() {
 
       if (dist > 0 && dist < interactionRadius) {
         const force = (interactionRadius - dist) / interactionRadius;
-        const push = force * 0.75;
+        const push = force * 8.05;
         p.x += (dx / dist) * push;
         p.y += (dy / dist) * push;
       }
@@ -377,4 +493,5 @@ gsap.fromTo(
 
 setupFxCanvas();
 animateFx();
+loadNotificationPool();
 resetGame();
