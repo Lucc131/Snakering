@@ -5,6 +5,9 @@ const bestEl = document.getElementById('best');
 const overlay = document.getElementById('overlay');
 const overlayText = document.getElementById('overlay-text');
 
+const fxCanvas = document.getElementById('fx-canvas');
+const fxCtx = fxCanvas.getContext('2d');
+
 const GRID_SIZE = 20;
 const TILES = canvas.width / GRID_SIZE;
 const START_SPEED = 130;
@@ -20,6 +23,11 @@ let bestScore = Number(localStorage.getItem('snaker-best') || 0);
 let speed = START_SPEED;
 let running = false;
 let loop;
+
+const fxMouse = { x: 0, y: 0, active: false };
+const fxParticles = [];
+let fxAnimationFrame;
+let fxDpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
 
 bestEl.textContent = `Recorde R$ ${bestScore}`;
 
@@ -221,6 +229,121 @@ function hideOverlay() {
   overlay.classList.add('hidden');
 }
 
+function setupFxCanvas() {
+  fxDpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+  fxCanvas.width = Math.floor(window.innerWidth * fxDpr);
+  fxCanvas.height = Math.floor(window.innerHeight * fxDpr);
+  fxCtx.setTransform(fxDpr, 0, 0, fxDpr, 0, 0);
+
+  const area = window.innerWidth * window.innerHeight;
+  const total = Math.max(45, Math.min(120, Math.floor(area / 16500)));
+
+  fxParticles.length = 0;
+  for (let i = 0; i < total; i += 1) {
+    fxParticles.push(createFxParticle());
+  }
+}
+
+function createFxParticle() {
+  const speed = 0.25 + Math.random() * 0.55;
+  const angle = Math.random() * Math.PI * 2;
+  return {
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    vx: Math.cos(angle) * speed,
+    vy: Math.sin(angle) * speed,
+    baseRadius: 1 + Math.random() * 1.8,
+    pulse: Math.random() * Math.PI * 2
+  };
+}
+
+function animateFx() {
+  fxCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+  const interactionRadius = 130;
+  const maxLinkDist = 92;
+
+  for (let i = 0; i < fxParticles.length; i += 1) {
+    const p = fxParticles[i];
+
+    p.x += p.vx;
+    p.y += p.vy;
+    p.pulse += 0.02;
+
+    if (p.x < -8) p.x = window.innerWidth + 8;
+    if (p.x > window.innerWidth + 8) p.x = -8;
+    if (p.y < -8) p.y = window.innerHeight + 8;
+    if (p.y > window.innerHeight + 8) p.y = -8;
+
+    if (fxMouse.active) {
+      const dx = p.x - fxMouse.x;
+      const dy = p.y - fxMouse.y;
+      const dist = Math.hypot(dx, dy);
+
+      if (dist > 0 && dist < interactionRadius) {
+        const force = (interactionRadius - dist) / interactionRadius;
+        const push = force * 0.75;
+        p.x += (dx / dist) * push;
+        p.y += (dy / dist) * push;
+      }
+    }
+
+    for (let j = i + 1; j < fxParticles.length; j += 1) {
+      const q = fxParticles[j];
+      const lx = p.x - q.x;
+      const ly = p.y - q.y;
+      const dist = Math.hypot(lx, ly);
+
+      if (dist < maxLinkDist) {
+        const alpha = (1 - dist / maxLinkDist) * 0.28;
+        fxCtx.strokeStyle = `rgba(102, 235, 180, ${alpha.toFixed(3)})`;
+        fxCtx.lineWidth = 1;
+        fxCtx.beginPath();
+        fxCtx.moveTo(p.x, p.y);
+        fxCtx.lineTo(q.x, q.y);
+        fxCtx.stroke();
+      }
+    }
+  }
+
+  for (let i = 0; i < fxParticles.length; i += 1) {
+    const p = fxParticles[i];
+    const radius = p.baseRadius + Math.sin(p.pulse) * 0.35;
+
+    fxCtx.fillStyle = 'rgba(169, 252, 215, 0.85)';
+    fxCtx.beginPath();
+    fxCtx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+    fxCtx.fill();
+  }
+
+  fxAnimationFrame = window.requestAnimationFrame(animateFx);
+}
+
+document.addEventListener('mousemove', (e) => {
+  fxMouse.x = e.clientX;
+  fxMouse.y = e.clientY;
+  fxMouse.active = true;
+});
+
+document.addEventListener('mouseleave', () => {
+  fxMouse.active = false;
+});
+
+window.addEventListener('touchmove', (e) => {
+  if (!e.touches || e.touches.length === 0) return;
+  fxMouse.x = e.touches[0].clientX;
+  fxMouse.y = e.touches[0].clientY;
+  fxMouse.active = true;
+}, { passive: true });
+
+window.addEventListener('touchend', () => {
+  fxMouse.active = false;
+});
+
+window.addEventListener('resize', () => {
+  setupFxCanvas();
+});
+
 document.addEventListener('keydown', (e) => {
   const key = e.key.toLowerCase();
 
@@ -252,4 +375,6 @@ gsap.fromTo(
   { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power2.out' }
 );
 
+setupFxCanvas();
+animateFx();
 resetGame();
