@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snaker - Cobranca Run</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#09141d',
+            panel: '#101f2b',
+            line: '#274357',
+            emerald: '#35d08f',
+            mint: '#8ef0c2',
+            warn: '#f5b546'
+          },
+          boxShadow: {
+            board: '0 22px 60px rgba(0, 0, 0, 0.4)'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="min-h-screen text-slate-100 antialiased">
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+
+  <main class="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center px-4 py-8">
+    <section class="w-full max-w-4xl rounded-2xl border border-line/60 bg-panel/80 p-5 md:p-8 backdrop-blur-xl">
+      <header class="mb-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="tracking-[0.2em] text-xs uppercase text-slate-400">Snaker</p>
+          <h1 class="mt-1 text-2xl font-extrabold md:text-4xl">Snakering</h1>
+          <p class="mt-2 text-sm text-slate-300">Colete notas de cobranca para crescer e bater seu recorde.</p>
+        </div>
+        <div class="rounded-xl border border-line/70 bg-ink/60 px-4 py-3 text-right">
+          <p id="score" class="text-lg font-bold text-mint">R$ 0</p>
+          <p id="best" class="text-xs uppercase tracking-[0.14em] text-slate-400">Recorde R$ 0</p>
+        </div>
+      </header>
+
+      <div class="grid gap-4 lg:grid-cols-[1fr_220px]">
+        <div class="board-shell relative overflow-hidden rounded-xl border border-line/70 bg-ink/90 p-2">
+          <canvas id="board" width="600" height="600" class="aspect-square w-full rounded-lg"></canvas>
+          <div id="overlay" class="overlay absolute inset-0 hidden items-center justify-center p-8">
+            <div class="max-w-sm rounded-xl border border-line bg-ink/90 p-5 text-center shadow-board">
+              <p id="overlay-text" class="whitespace-pre-line text-sm md:text-base"></p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="rounded-xl border border-line/70 bg-ink/60 p-4">
+          <h2 class="text-sm font-bold uppercase tracking-[0.16em] text-slate-300">Controles</h2>
+          <ul class="mt-3 space-y-2 text-sm text-slate-300">
+            <li>Setas ou WASD para mover</li>
+            <li>Espaco para reiniciar</li>
+            <li>Sem colisao com paredes/corpo</li>
+          </ul>
+          <div class="mt-5 rounded-lg border border-emerald/40 bg-emerald/10 p-3 text-xs text-emerald-100">
+            Cada nota aumenta R$ 100 e acelera o ritmo.
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/game.js"></script>
+</body>
+</html>

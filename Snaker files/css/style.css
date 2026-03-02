@@ -1,0 +1,61 @@
+﻿:root {
+  --bg-main: #060d14;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  background: radial-gradient(circle at 15% 10%, #12273a 0%, #060d14 45%, #040a10 100%);
+}
+
+.bg-orb {
+  position: fixed;
+  width: 380px;
+  height: 380px;
+  filter: blur(90px);
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.orb-a {
+  top: -120px;
+  left: -80px;
+  background: #35d08f;
+}
+
+.orb-b {
+  right: -90px;
+  bottom: -120px;
+  background: #2d7ff9;
+}
+
+.board-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), transparent 35%);
+}
+
+#board {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  background: #06111b;
+}
+
+.overlay {
+  background: rgba(5, 12, 20, 0.68);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 640px) {
+  .bg-orb {
+    width: 260px;
+    height: 260px;
+  }
+}
