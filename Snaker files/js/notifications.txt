@@ -1,7 +1,7 @@
-# Uma notificacao por linha.
-# Linhas com # no inicio sao comentarios.
-# Com nome no topo (roxo): Nome: mensagem
-# Sem nome no topo: apenas a mensagem
+ #Uma notificacao por linha.
+ #Linhas com  no inicio sao comentarios.
+ #Com nome no topo (roxo): Nome: mensagem
+ #Sem nome no topo: apenas a mensagem
 
 Voce coletou uma nota e acordou tres suspeitas.
 Amor: Atende o celular, eu quero falar com voce!
@@ -14,3 +14,469 @@ Atualizacao estranha: as paredes estao observando.
 Nota recebida. Dignidade em manutencao.
 Aviso filosofico: todo atalho custa alguma coisa.
 Boletim do caos: nivel moderado e elegante.
+Mae: Filho, você comeu?
+Mae: Me liga agora.
+Mae: Orgulho de você ❤️
+Mae: Quem é essa menina na sua foto?
+Namorada💕: A gente precisa conversar.
+Namorada💕: Eu tô com saudade.
+Namorada💕: Acho melhor a gente dar um tempo.
+Namorada💕: Era brincadeira amor, eu te amo, volta pra casa, eu fiz lasanha.
+Namorada💕: Quem é “Ana❤️”??
+Namorada💕: Terminei. Bloqueado.
+Namorada💕: Você tá acordado?
+Namorada💕: Relaxa, não é nada demais… eu acho.
+Namorada💕: Você me ama mesmo?
+Namorada💕: não é bem assim, amor
+Namorada💕: Eu sonhei que você me traiu, com duas mulheres... em noites diferentes.
+Namorada💕: E eu acordei brava.
+Namorada💕: Quem é aquela?
+Namorada💕: Eu só tava testando você.
+Namorada💕: Passou no teste.
+Namorada💕: Não passou.
+Namorada💕: Era brincadeira….
+Namorada💕: Eu te odeio.
+Namorada💕: as vezes você só é um mala sabe...
+Namorada💕: seu mentiroso.
+Namorada💕: Você me achou bonita hoje?
+Namorada💕: aquele vestido me deixa gorda?
+Namorada💕: Eu te amo, você é minha vida, sem você não respiro, minha vida não teria sentido, por favor não me ouse me deixa, seria uma atitude babaca, mas você seria o meu babaca.
+Namorada💕: Eu vi o que você curtiu no instagram.
+Namorada💕: Não gostei.
+Namorada💕: Você respirou perto dela.
+Namorada💕: Onde você tava?
+Namorada💕: Eu confio em você.
+Namorada💕: Não me faça perder essa confiança.
+Namorada💕: Eu fiz um bolo pra você.
+Namorada💕: A culpa foi sua.
+Namorada💕: Eu cortei o cabelo.
+Namorada💕: Você não percebeu.
+Namorada💕: Tá tudo bem.
+Namorada💕: Não tá tudo bem.
+Namorada💕: Eu tô estranha?
+Namorada💕: Eu tô normal demais?
+Namorada💕: Eu pensei na gente.
+Namorada💕: Eu pensei em terminar.
+Namorada💕: Eu pensei em casar.
+Namorada💕: Eu fiquei com ciúmes.
+Namorada💕: Porque eu deletei o seu.
+Namorada💕: Você é distraído demais.
+Namorada💕: Não ligo se é caro, você me ama ou não?
+Namorada💕: Pode ser boa.
+Namorada💕: Pode ser vida real.
+Namorada💕: Eu te amo.
+Namorada💕: Manda localização.
+Namorada💕: Eu tava brincando.
+Namorada💕: Eu nunca brinco.
+Namorada💕: Não estraga isso.
+Namorada💕: Eu ainda tô aqui.
+Amigo: Mano fiz merda.
+Amigo: arrumei um fusca, Bora!
+Amigo: Bati seu carro.
+Amigo: Relaxa, foi só o retrovisor.
+Amigo: Vem jogar agora.
+Amigo: Deu ruim.
+Amigo: Você é meu melhor amigo.
+Amigo: Depois do João.
+Amigo: Você é meu único amigo.
+Amigo: Não espalha.
+Amigo: Espalharam.
+Amigo: Eu avisei.
+Amigo: Eu esqueci de avisar.
+Amigo: Eu usei seu nome.
+Amigo: Eu usei seu cartão.
+Amigo: Eu usei sua ideia.
+Amigo: E deu certo.
+Amigo: E deu muito errado.
+Amigo: Você tá ocupado?
+Amigo: Mesmo se estiver, vem.
+Amigo: Você lembra daquela vez?
+Amigo: Minha Namorada descobriu que eu traí ela cara.
+Amigo: Mano você tava muito bêbado ontem
+Amigo: Cara duvido você beber mais que eu
+Banco: Compra aprovada R$ 3.482,90.
+Banco: Saldo insuficiente.
+Banco: Tentativa de login suspeita.
+Banco: Você recebeu R$ 12.000.000.
+Banco: Cartão bloqueado por segurança.
+Banco: Empréstimo pré-aprovado.
+Faculdade: Parabéns, você foi aprovado!
+Faculdade: Sua inscrição foi recusada.
+Faculdade: Documentação pendente.
+Faculdade: Último dia para matrícula.
+Mecanico: Encontramos outro problema.
+Mecanico: Vai ficar mais caro.
+Mecanico: Seu carro está pronto.
+Mecanico: Melhor você vir aqui.
+Delivery: Seu pedido saiu para entrega.
+Delivery: Motoboy cancelou.
+Delivery: Endereço não encontrado.
+Delivery: Pedido entregue ao vizinho.
+Trabalho: Precisamos conversar amanhã cedo.
+Trabalho: Você foi promovido!
+Trabalho: Seu contrato foi encerrado.
+Trabalho: Reunião surpresa às 7h.
+Desconhecido: Eu sei o que você fez.
+Desconhecido: Atende.
+Desconhecido: Número errado.
+Desconhecido: Não é nada demais… ainda.
+Sistema: Atualização obrigatória.
+Sistema: Erro fatal.
+Sistema: Backup concluído.
+Sistema: Arquivo corrompido.
+Correios: Sua encomenda foi taxada.
+Correios: Produto extraviado.
+Correios: Objeto saiu para entrega.
+Sorte: Você ganhou na loteria.
+Sorte: Quase.
+Sorte: Tente novamente amanhã.
+Sorte: Hoje é seu dia.
+Realidade: Conta de luz vencida.
+Realidade: Aluguel atrasado.
+Realidade: Parabéns, você sobreviveu mais um dia.
+Realidade: Nada aconteceu. Continue.
+Fofoca: Estão falando de você.
+Fofoca: É melhor você ver isso.
+Fofoca: Apagaram a mensagem.
+Hacker: Seus dados foram vazados.
+Hacker: Brincadeira… ou não.
+Hacker: Pagamento exigido.
+Meme: Você é oficialmente velho.
+Meme: 2015 foi há 10 anos.
+Meme: Você piscou, é segunda-feira.
+Ex: Oi sumido.
+Ex: Eu tava pensando na gente.
+Ex: Foi erro meu.
+Ex: Você ainda mora no mesmo lugar?
+Clima: Tempestade chegando.
+Clima: 40°C hoje.
+Clima: Granizo confirmado.
+Vida: Novo trauma desbloqueado.
+Vida: Conquista desbloqueada.
+Vida: Você evoluiu.
+Vida: Você regrediu.
+Familia: Precisamos falar sobre herança.
+Familia: Almoço domingo obrigatório.
+Familia: Seu primo ficou milionário.
+Anuncio: Você foi selecionado!
+Anuncio: Última chance.
+Anuncio: Oferta imperdível.
+Anuncio: Ignorado com sucesso.
+Paranoia: Estão te observando.
+Paranoia: Porta destrancada.
+Paranoia: Barulho estranho às 3:17.
+Autoestima: Você consegue.
+Autoestima: Você não é suficiente.
+Autoestima: Respira.
+Autoestima: Vai dar certo.
+Um pato te escolheu.
+Você perdeu o jogo.
+NPC desbloqueado.
+Nada faz sentido.
+42.
+Você já esteve aqui antes.
+Missão secundária iniciada.
+Energia crítica.
+Continue?
+Fim inesperado.
+Mae: Traz pão quando voltar.
+Namorada💕: Você mudou.
+Amigo: Confia em mim.
+Banco: Estorno realizado.
+Desconhecido: Visualizado às 03:14.
+Sistema: Reiniciando em 10…
+Você esqueceu algo importante.
+Clima: Vai chover exatamente quando você sair.
+Ex: Sonhei com você hoje.
+Você deixou o fogão ligado?
+Trabalho: Precisamos falar sobre sua postura.
+Entrega confirmada.
+Seu vizinho está ouvindo música alta.
+Parabéns, você desbloqueou ansiedade.
+Atualização concluída com falhas.
+Seu nome foi citado em uma conversa.
+Amigo: Não era pra você saber disso.
+Banco: Limite aumentado.
+Banco: Limite reduzido.
+Sua senha expirou.
+Mae: Quem é essa no seu story?
+Chamadas perdidas (3).
+Você esqueceu o aniversário de alguém.
+Ex: Era você mesmo?
+Nova conexão detectada.
+Alerta: Movimento suspeito.
+Você está sendo observado.
+Promoção válida até ontem.
+Você ganhou 12 milhões de dólares.
+Erro ao processar felicidade.
+Sistema: Falha crítica.
+Você respirou errado.
+Seu cachorro sabe.
+Parabéns, era golpe.
+Você está atrasado.
+Você está adiantado demais.
+Nada mudou.
+Tudo mudou.
+Entrega cancelada pelo universo.
+Amigo: Mano, deu polícia.
+Você não fechou direito.
+Banco: Pagamento duplicado.
+Recibo enviado.
+Mensagem apagada.
+Você perdeu uma oportunidade.
+Nova oportunidade detectada.
+Mae: Tô orgulhosa.
+Namorada💕: A culpa não é sua.
+Namorada💕: A culpa é sua.
+Trabalho: E-mail urgente.
+Seu pacote foi extraviado.
+Erro 404: Motivação não encontrada.
+Sistema: Energia em 5%.
+Seu passado curtiu sua foto.
+Atualização disponível para sua vida.
+Você falou demais.
+Você deveria ter ficado quieto.
+Oferta imperdível.
+Oferta claramente péssima.
+Nova fofoca desbloqueada.
+Paranoia ativada.
+Silêncio estranho.
+Você ouviu isso?
+Número desconhecido ligando.
+Número desconhecido desligou.
+Banco: Compra internacional detectada.
+Você esqueceu de responder.
+Eles perceberam.
+Seu segredo não é mais segredo.
+Amigo: Confia, vai dar certo.
+Amigo: Não deu certo.
+Clima: Sol, mas só pra irritar.
+Você pisou em algo suspeito.
+Entrega realizada com sucesso.
+Entrega realizada na casa errada.
+Sistema: Dados corrompidos.
+Você está melhorando.
+Você está piorando.
+Mae: Volta cedo.
+Mae: Não precisa voltar.
+Namorada💕: Eu ainda te amo.
+Namorada💕: Eu nunca te amei.
+alexa: Você ganhou seguidores.
+alexa: Você perdeu seguidores.
+alexa: Nova dívida adicionada.
+alexa: Dívida removida.
+alexa: Atualização emocional pendente.
+alexa: Erro ao deletar memória.
+alexa: Seu futuro tentou te ligar.
+alexa: Seu passado mandou mensagem.
+alexa: Você esqueceu de algo no carro.
+alexa: O mecânico sorriu estranho.
+Trabalho: Parabéns pelo desempenho.
+Trabalho: Seu desempenho foi questionado.
+Você riu alto demais.
+Você está falando sozinho.
+Banco: Pix recebido.
+Banco: Pix devolvido.
+motivação: A verdade está próxima.
+motivação: Mentira detectada.
+motivação: Você não deveria ter aberto isso.
+motivação: Agora é tarde.
+motivação: Calma.
+motivação: Corre.
+motivação: Espere.
+motivação: Continue.
+motivação: Pare.
+motivação: Respire.
+motivação: Não respire tão alto.
+pensamentos: Você já viu esse momento antes.
+pensamentos: Déjà vu confirmado.
+pensamentos: Missão principal atualizada.
+pensamentos: Missão secundária falhou.
+pensamentos: Novo medo desbloqueado.
+pensamentos: Novo talento desbloqueado.
+pensamentos: Você não está sozinho.
+pensamentos: Você definitivamente está sozinho.
+pensamentos: Barulho na cozinha.
+pensamentos: Porta destrancada.
+pensamentos: Janela aberta.
+pensamentos: Tudo está normal.
+pensamentos: Nada está normal.
+pensamentos: Sistema: Boa sorte.
+pensamentos: Sistema: Você vai precisar.
+pensamentos: Vida: Plot twist.
+pensamentos: Vida: Sem aviso prévio.
+pensamentos: Você escolheu errado.
+pensamentos: Talvez tenha escolhido certo.
+pensamentos: Ninguém percebeu.
+pensamentos: Todo mundo percebeu.
+pensamentos: Silêncio absoluto.
+pensamentos: Risada distante.
+pensamentos: Sua bateria acabou.
+pensamentos: Sua paciência acabou.
+pensamentos: Seu tempo acabou.
+pensamentos: Continue jogando.
+pensamentos: Fim?
+pensamentos: Seu Wi-Fi pediu tempo pra pensar.
+pensamentos: Atualização concluída, nada mudou.
+pensamentos: Você não perdeu, só ganhou experiência negativa.
+pensamentos: Seu talento oculto continua oculto.
+pensamentos: Parabéns, você tropeçou no próprio pensamento.
+Erro 404: vergonha na cara não encontrada.
+pensamentos: Seu cérebro reiniciou sozinho.
+pensamentos: A vida tá em modo avião.
+pensamentos: Você não é preguiçoso, é energético econômico.
+pensamentos: Seu plano deu certo… no multiverso errado.
+pensamentos: NPC te julgando silenciosamente.
+pensamentos: Você piscou e perdeu o tutorial.
+pensamentos: O pato aprovou sua atitude.
+pensamentos: Você é forte, mas não contra boleto.
+pensamentos: Sistema detectou excesso de confiança.
+pensamentos: Sua sombra tá com medo de você.
+pensamentos: Parabéns, você ganhou absolutamente nada.
+pensamentos: Você não procrastina, você pesquisa alternativas.
+pensamentos: Seu despertador te odeia.
+pensamentos: Você venceu! Ninguém sabe o quê, mas venceu.
+pensamentos: Seu cérebro abriu 47 abas.
+pensamentos: Você fechou a geladeira devagar demais.
+pensamentos: Parabéns, você ativou o modo aleatório.
+pensamentos: Seu reflexo piscou diferente.
+pensamentos: Você não tá atrasado, o mundo que adiantou.
+pensamentos: Seu celular tá com 1% e coragem.
+pensamentos: Você não errou, foi plot twist.
+pensamentos: Seu senso de direção pediu demissão.
+pensamentos: Seu café pediu café.
+pensamentos: Você é limitado, mas ilimitadamente limitado.
+pensamentos: Seu pensamento saiu pra comprar cigarro.
+pensamentos: Você não caiu, só testou a gravidade.
+pensamentos: Seu plano B não sabe que é plano B.
+pensamentos: Você desbloqueou a skin “confuso”.
+pensamentos: Seu cérebro fez buffering.
+pensamentos: Você está oficialmente improvisando.
+pensamentos: Seu futuro tá rindo.
+pensamentos: Seu passado também.
+pensamentos: Parabéns, você assustou o nada.
+pensamentos: Seu sono tá de férias.
+pensamentos: Você acordou cansado de dormir.
+pensamentos: Seu carisma tá no modo economia.
+pensamentos: Você não tá perdido, tá explorando.
+pensamentos: Seu GPS sugeriu terapia.
+pensamentos: Você correu atrás do prejuízo, ele correu mais.
+pensamentos: Seu azar pediu hora extra.
+pensamentos: Você não é estranho, é edição limitada.
+pensamentos: Seu Wi-Fi sentiu vergonha.
+pensamentos: Parabéns, você quase foi produtivo.
+pensamentos: Seu reflexo pediu privacidade.
+pensamentos: Você não tá suando, é brilho interno vazando.
+pensamentos: Seu silêncio falou besteira.
+pensamentos: Você tentou, o universo riu.
+pensamentos: Seu cérebro instalou vírus de dúvida.
+pensamentos: Você é multitarefa: erra em várias áreas.
+pensamentos: Seu reflexo piscou primeiro.
+pensamentos: Você não tá sozinho, tá acompanhado da própria dúvida.
+pensamentos: Seu talento é sobreviver no improviso.
+pensamentos: Você venceu a batalha contra nada.
+pensamentos: Seu sono foi comprar pão.
+pensamentos: Você é beta tester da própria vida.
+pensamentos: Seu carisma precisa de atualização.
+pensamentos: Você quase foi inteligente agora.
+pensamentos: Seu cérebro abriu propaganda interna.
+pensamentos: Você não é estranho, é DLC rara.
+pensamentos: Seu destino apertou “random”.
+pensamentos: Você está oficialmente no modo “vai assim mesmo”.
+Mae: Você anda tão distante.
+Namorada💕: Eu cansei.
+Amigo: Eu não te contei tudo.
+Trabalho: Precisamos conversar sobre seu futuro aqui.
+Banco: Saldo disponível: R$ 0,00.
+Desconhecido: Eu sei mais do que você imagina.
+Sistema: Erro irreversível.
+Ex: Eu tô melhor sem você.
+Mae: Você mudou… e não foi pra melhor.
+Amigo: Não dava pra confiar em você.
+Trabalho: Seu desempenho caiu.
+Você foi removido do grupo.
+Mensagem apagada.
+Você não foi convidado.
+Seu nome não estava na lista.
+Entrega cancelada.
+Faculdade: Não foi dessa vez.
+Seu currículo foi visualizado.
+Seu currículo foi ignorado.
+Você tentou.
+Não foi suficiente.
+Namorada💕: Eu conheci outra pessoa.
+Amigo: A culpa foi sua.
+Mae: Eu esperava mais.
+Banco: Pagamento recusado.
+Sistema: Backup não encontrado.
+Você ficou pra trás.
+Eles seguiram sem você.
+Desconhecido: Atende.
+Desconhecido: Último aviso.
+Seu segredo vazou.
+Você não percebeu.
+Todo mundo percebeu.
+Você não é prioridade.
+Visualizado.
+Silêncio.
+Você foi substituído.
+Trabalho: Estamos reestruturando a equipe.
+Você não passou na entrevista.
+Namorada💕: Não sinto mais o mesmo.
+Amigo: Eu tava fingindo.
+Mae: Estou decepcionada.
+Sistema: Dados perdidos.
+Você perdeu algo importante.
+Você deveria ter dito algo.
+Agora é tarde.
+Eles riram.
+Não era brincadeira.
+Você acreditou.
+Era mentira.
+Você confiou na pessoa errada.
+Sua vez nunca chegou.
+Clima: Tempestade interna.
+Você está sozinho agora.
+Ninguém respondeu.
+Ninguém ligou.
+Seu esforço não foi reconhecido.
+Erro 403: Acesso negado.
+Você não foi escolhido.
+Namorada💕: Não era você.
+Amigo: Eu já sabia.
+Mae: Você não me escuta.
+Trabalho: Corte de custos.
+Banco: Dívida acumulada.
+sms: Você falhou.
+sms: Você quase conseguiu.
+sms: Quase não conta.
+sms: Desconhecido: Estou esperando.
+sms: Seu tempo acabou.
+sms: Você prometeu.
+sms: Você não cumpriu.
+sms: Eles desistiram.
+sms: Você também.
+sms: Sistema: Falha permanente.
+sms: Você ficou invisível.
+sms: Ninguém percebeu sua ausência.
+sms: Você não era tão importante.
+sms: Silêncio desconfortável.
+sms: Foi culpa sua?
+sms: Você ainda pensa nisso.
+sms: Você nunca respondeu.
+sms: Você perdeu a chance.
+sms: Ela seguiu em frente.
+sms: Ele nem lembra mais.
+sms: Seu nome foi apagado.
+sms: Você ficou para trás.
+sms: Era sua última tentativa.
+sms: Não haverá próxima vez.
+sms: Você sabia que ia dar errado.
+sms: Você ignorou os sinais.
+sms: Agora você sabe.
+sms: Agora você sente.
+sms: Fim de conexão.
+sms: Consciência: R$ 100 no jogo… e ganha trauma emocional grátis. 
+
+
+
