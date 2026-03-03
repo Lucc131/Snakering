@@ -15,7 +15,7 @@
           colors: {
             ink: '#09141d',
             panel: '#101f2b',
-            line: '#274357',s
+            line: '#274357',
             emerald: '#35d08f',
             mint: '#8ef0c2',
             warn: '#f5b546'
@@ -50,12 +50,22 @@
       </header>
 
       <div class="grid gap-4 lg:grid-cols-[1fr_220px]">
-        <div class="board-shell relative overflow-hidden rounded-xl border border-line/70 bg-ink/90 p-2">
-          <canvas id="board" width="600" height="600" class="aspect-square w-full rounded-lg"></canvas>
-          <div id="overlay" class="overlay absolute inset-0 hidden items-center justify-center p-8">
-            <div class="max-w-sm rounded-xl border border-line bg-ink/90 p-5 text-center shadow-board">
-              <p id="overlay-text" class="whitespace-pre-line text-sm md:text-base"></p>
+        <div>
+          <div class="board-shell relative overflow-hidden rounded-xl border border-line/70 bg-ink/90 p-2">
+            <canvas id="board" width="600" height="600" class="aspect-square w-full rounded-lg"></canvas>
+            <div id="overlay" class="overlay absolute inset-0 hidden items-center justify-center p-8">
+              <div class="max-w-sm rounded-xl border border-line bg-ink/90 p-5 text-center shadow-board">
+                <p id="overlay-text" class="whitespace-pre-line text-sm md:text-base"></p>
+              </div>
             </div>
+          </div>
+
+          <div class="touch-controls" aria-label="Controles touch">
+            <button type="button" class="touch-btn up" data-dir="up" aria-label="Mover para cima">▲</button>
+            <button type="button" class="touch-btn left" data-dir="left" aria-label="Mover para esquerda">◀</button>
+            <button type="button" class="touch-btn restart" data-action="restart" aria-label="Reiniciar jogo">↻</button>
+            <button type="button" class="touch-btn right" data-dir="right" aria-label="Mover para direita">▶</button>
+            <button type="button" class="touch-btn down" data-dir="down" aria-label="Mover para baixo">▼</button>
           </div>
         </div>
 
@@ -64,6 +74,7 @@
           <ul class="mt-3 space-y-2 text-sm text-slate-300">
             <li>Setas ou WASD para mover</li>
             <li>Espaco para reiniciar</li>
+            <li>Touch: swipe ou botoes abaixo do jogo</li>
             <li>Sem colisao com paredes/corpo</li>
           </ul>
           <div class="mt-5 rounded-lg border border-emerald/40 bg-emerald/10 p-3 text-xs text-emerald-100">

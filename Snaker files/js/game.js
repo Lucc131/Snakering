@@ -5,6 +5,8 @@ const bestEl = document.getElementById('best');
 const overlay = document.getElementById('overlay');
 const overlayText = document.getElementById('overlay-text');
 const notificationsListEl = document.getElementById('notifications-list');
+const boardShellEl = document.querySelector('.board-shell');
+const touchButtons = document.querySelectorAll('.touch-btn');
 
 const fxCanvas = document.getElementById('fx-canvas');
 const fxCtx = fxCanvas.getContext('2d');
@@ -40,6 +42,7 @@ const fxParticles = [];
 let fxAnimationFrame;
 let fxDpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
 let notificationPool = [...DEFAULT_NOTIFICATIONS];
+let swipeStart = null;
 
 bestEl.textContent = `Recorde R$ ${bestScore}`;
 
@@ -243,6 +246,20 @@ function showOverlay(text) {
 function hideOverlay() {
   overlay.classList.remove('flex');
   overlay.classList.add('hidden');
+}
+
+function trySetDirection(next) {
+  if (!next) return;
+  const reverse = next.x === -direction.x && next.y === -direction.y;
+  if (!reverse) queued = next;
+}
+
+function directionFromInput(input) {
+  if (input === 'arrowup' || input === 'w' || input === 'up') return { x: 0, y: -1 };
+  if (input === 'arrowdown' || input === 's' || input === 'down') return { x: 0, y: 1 };
+  if (input === 'arrowleft' || input === 'a' || input === 'left') return { x: -1, y: 0 };
+  if (input === 'arrowright' || input === 'd' || input === 'right') return { x: 1, y: 0 };
+  return null;
 }
 
 function pickNotification() {
@@ -468,22 +485,66 @@ document.addEventListener('keydown', (e) => {
     return;
   }
 
-  const next =
-    key === 'arrowup' || key === 'w'
-      ? { x: 0, y: -1 }
-      : key === 'arrowdown' || key === 's'
-      ? { x: 0, y: 1 }
-      : key === 'arrowleft' || key === 'a'
-      ? { x: -1, y: 0 }
-      : key === 'arrowright' || key === 'd'
-      ? { x: 1, y: 0 }
-      : null;
-
-  if (!next) return;
-
-  const reverse = next.x === -direction.x && next.y === -direction.y;
-  if (!reverse) queued = next;
+  const next = directionFromInput(key);
+  trySetDirection(next);
 });
+
+overlay.addEventListener('click', () => {
+  if (!running) resetGame();
+});
+
+touchButtons.forEach((button) => {
+  const onPress = (event) => {
+    event.preventDefault();
+    const action = button.dataset.action;
+    const dir = button.dataset.dir;
+
+    if (action === 'restart') {
+      if (!running) resetGame();
+      return;
+    }
+
+    trySetDirection(directionFromInput(dir));
+  };
+
+  button.addEventListener('click', onPress);
+  button.addEventListener('touchstart', onPress, { passive: false });
+});
+
+if (boardShellEl) {
+  boardShellEl.addEventListener('touchstart', (event) => {
+    if (!event.touches || event.touches.length === 0) return;
+    const touch = event.touches[0];
+    swipeStart = { x: touch.clientX, y: touch.clientY };
+  }, { passive: true });
+
+  boardShellEl.addEventListener('touchmove', (event) => {
+    event.preventDefault();
+  }, { passive: false });
+
+  boardShellEl.addEventListener('touchend', (event) => {
+    if (!swipeStart) return;
+
+    const touch = event.changedTouches && event.changedTouches[0];
+    if (!touch) return;
+
+    const dx = touch.clientX - swipeStart.x;
+    const dy = touch.clientY - swipeStart.y;
+    swipeStart = null;
+
+    const threshold = 26;
+    if (Math.abs(dx) < threshold && Math.abs(dy) < threshold) {
+      if (!running) resetGame();
+      return;
+    }
+
+    const dir = Math.abs(dx) > Math.abs(dy)
+      ? (dx > 0 ? 'right' : 'left')
+      : (dy > 0 ? 'down' : 'up');
+
+    trySetDirection(directionFromInput(dir));
+  }, { passive: true });
+}
 
 gsap.fromTo(
   '.board-shell, aside, header',

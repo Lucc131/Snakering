@@ -67,6 +67,43 @@ body {
   backdrop-filter: blur(4px);
 }
 
+.touch-controls {
+  display: none;
+  margin-top: 12px;
+  width: 100%;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-areas:
+    ". up ."
+    "left restart right"
+    ". down .";
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.touch-btn {
+  border: 1px solid rgba(126, 180, 214, 0.45);
+  border-radius: 12px;
+  background: linear-gradient(160deg, rgba(16, 41, 62, 0.88), rgba(9, 24, 38, 0.9));
+  color: #d9efff;
+  font-size: 20px;
+  min-height: 56px;
+  font-weight: 700;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.touch-btn:active {
+  transform: scale(0.96);
+}
+
+.touch-btn.up { grid-area: up; }
+.touch-btn.left { grid-area: left; }
+.touch-btn.restart { grid-area: restart; font-size: 18px; }
+.touch-btn.right { grid-area: right; }
+.touch-btn.down { grid-area: down; }
+
 .notifications-panel {
   margin-top: 14px;
   background: #05121eb3;
@@ -171,5 +208,14 @@ footer {
 
   #fx-canvas {
     opacity: 0.6;
+  }
+
+  .touch-controls {
+    display: grid;
+  }
+
+  footer {
+    position: static;
+    margin-top: 8px;
   }
 }
